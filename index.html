@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #08237e 0%, #1fa6cf 100%);
             min-height: 100vh;
             padding: 40px 20px;
         }
@@ -104,7 +104,7 @@
             color: #155724;
         }
 
-        .status-archived {
+        .status-revision {
             background: #fff3cd;
             color: #856404;
         }
@@ -150,7 +150,8 @@
     <div class="container">
         <header>
             <h1>Octopy Internship Repos</h1>
-            <p class="subtitle">Robotics and Automation projects from my internship at Octopy (August - December 2025)</p>
+            <p class="subtitle">Robotics and Automation projects made by Kaléin Tamaríz</p>
+            <p class="subtitle">(August - December 2025)</p>
         </header>
 
         <div class="repos-grid" id="reposContainer"></div>
@@ -160,53 +161,25 @@
         // Sample repository data - Replace this with your actual repositories
         const repositories = [
             {
-                title: "Awesome Web App",
-                description: "A full-stack web application built with React and Node.js. Features include user authentication, real-time updates, and a responsive design.",
-                link: "https://github.com/yourusername/awesome-web-app",
-                image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
-                status: "active"
-            },
-            {
-                title: "Machine Learning Project",
-                description: "A machine learning project using Python and TensorFlow to predict housing prices based on various features.",
-                link: "https://github.com/yourusername/ml-project",
-                image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop",
+                title: "ESP32 Joystick Controller for ROS2",
+                description: "Control a ROS2 robot wirelessly using an ESP32 and analog joystick. Features real-time Socket.IO communication, variable speed control, and RGB LED status indicators.",
+                link: "https://github.com/TheBIGduke/Joystick-Wireless-Control-for-ROS2.git",
+                image: "Files/joystick.jpg",
                 status: "wip"
             },
             {
-                title: "Mobile Game",
-                description: "A fun and addictive mobile game developed with Unity and C#. Available on iOS and Android platforms.",
-                link: "https://github.com/yourusername/mobile-game",
-                image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=300&fit=crop",
+                title: "OctopID",
+                description: "Animated face system built with SVG and JavaScript, features 13 moods with smooth transitions, eye movements (panning and blinking), audio-reactive mode that synchronizes mouth movements with real-time audio input via WebSockets",
+                link: "https://github.com/TheBIGduke/OctopID.git",
+                image: "Files/face.gif",
                 status: "active"
-            },
-            {
-                title: "API Documentation Tool",
-                description: "An automated tool for generating beautiful API documentation from code comments and annotations.",
-                link: "https://github.com/yourusername/api-docs-tool",
-                image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=500&h=300&fit=crop",
-                status: "archived"
-            },
-            {
-                title: "Data Visualization Dashboard",
-                description: "Interactive dashboard for visualizing complex datasets using D3.js and modern web technologies.",
-                link: "https://github.com/yourusername/data-viz",
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
-                status: "active"
-            },
-            {
-                title: "CLI Tool Suite",
-                description: "A collection of command-line tools to improve developer productivity and automate common tasks.",
-                link: "https://github.com/yourusername/cli-tools",
-                image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=500&h=300&fit=crop",
-                status: "wip"
             }
         ];
 
         function getStatusClass(status) {
             const statusMap = {
                 'active': 'status-active',
-                'archived': 'status-archived',
+                'revision': 'status-revision',
                 'wip': 'status-wip'
             };
             return statusMap[status] || 'status-active';
@@ -215,7 +188,7 @@
         function getStatusLabel(status) {
             const labelMap = {
                 'active': 'Active',
-                'archived': 'Archived',
+                'revision': 'Under Revision',
                 'wip': 'In Progress'
             };
             return labelMap[status] || 'Active';
